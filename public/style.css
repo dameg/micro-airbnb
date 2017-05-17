@@ -1,0 +1,10 @@
+.nav-wrapper {
+  padding: 0 15px 0 15px;
+}
+
+.alert {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.9;
+}

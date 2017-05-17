@@ -1,0 +1,31 @@
+<%- include('../partials/header')%>
+<div class="container">
+  <div class="row">
+    <% places.forEach( function (place) { %>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="<%=place.image%>">
+              <span class="card-title"><%= place.name %></span>
+            </div>
+            <div class="card-content">
+               <h4><%= place.price %>€</h4>
+               <i><%= place.location %></i>
+               <p><%= place.description.substring(0,100) %></p>
+            </div>
+            <div class="card-action">
+                <a href="/places/<%=place._id%>" class="btn waves-effect waves-light red" type="submit">SHOW
+                    <i class="material-icons right">info_outline</i>
+                </a>
+            </div>
+          </div>
+        </div>
+    <% }); %>
+  </div>
+  <div class="fixed-action-btn">
+    <a a href="/places/new" class="btn-floating waves-effect waves-light btn-large pulse red">
+      <i class="large material-icons">add</i>
+    </a>
+</div>
+</div>
+<%- include('../partials/footer')%>

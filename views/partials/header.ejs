@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/style.css">
+    <title> μMicroAirbnb</title>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/"><div class="brand-logo">μAirbnb</div></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <% if (!currentUser) { %>
+                        <li><a href="/login">Sign In</a></li>
+                        <li><a href="/register">Sing Up</a></li>
+                        <% } else { %>
+                            <li>Signed in as
+                                <%= currentUser.username %>
+                            </li>
+                            <li><a href="/logout">Sign Out</a></li>
+                            <% } %>
+                </ul>
+            </div>
+        </nav>
+    </div>
+  <% if (errorAlert && errorAlert.length > 0 ) {%>
+    <div class="container">
+      <div class="row">
+        <div class="alert">
+        <strong>Error</strong> - <%= errorAlert %>
+        </div>
+      </div>
+    </div>
+  <% } %>
+
+  <% if (successAlert && successAlert.length > 0 ) {%>
+    <div class="container">
+      <div class="row">
+        <div class="alert">
+        <strong>Yeppi</strong> - <%= successAlert %>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>

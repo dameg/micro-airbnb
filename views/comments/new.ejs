@@ -1,0 +1,25 @@
+<%- include('../partials/header')%>
+    <div class="container">
+        <div class="row">
+            <div class="col m8 s12 offset-m2">
+                <div class="card-panel">
+                    <form action="/places/<%= place._id %>/comments" method="POST">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea class="materialize-textarea" name="comment[text]"></textarea>
+                                <label for="textarea1">Comment</label>
+                            </div>
+                        </div>
+                        <div class="row center-align">
+                            <button class="btn waves-effect waves-light red" type="submit">Add comment
+                          <i class="material-icons right">send</i>
+                      </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<%- include('../partials/footer')%>

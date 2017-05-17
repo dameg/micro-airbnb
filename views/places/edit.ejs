@@ -1,0 +1,47 @@
+<%- include('../partials/header')%>
+    <div class="container">
+        <div class="row">
+            <div class="col m8 s12 offset-m2">
+                <div class="card-panel">
+                    <form action="/places/<%= place._id %>/?_method=PUT" method="POST">
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                                <input type="text" class="text-red" name="place[name]" value="<%= place.name %>">
+                                <label for="name">Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input type="text" class="text-red" name="place[location]" value="<%= place.location %>">
+                              <label for="location">Location</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                                <input type="text" class="text-red" name="place[image]" value="<%= place.image %>">
+                                <label for="image">Image source</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea class="materialize-textarea" name="place[description]"> <%= place.description %></textarea>
+                                <label for="textarea1">Description</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="number" step="1" class="text-red" name="place[price]" value="<%= place.price %>">
+                                <label for="textarea1">Price in €</label>
+                            </div>
+                        </div>
+                        <div class="row center-align">
+                            <button class="btn waves-effect waves-light red" type="submit">update place
+                              <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer')%>
