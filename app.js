@@ -61,6 +61,13 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+//  _                     _
+// | |                   | |
+// | |     ___   ___ __ _| |
+// | |    / _ \ / __/ _` | |
+// | |___| (_) | (_| (_| | |
+// \_____/\___/ \___\__,_|_|
+
 app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
     res.locals.errorAlert = req.flash('error');
@@ -73,12 +80,13 @@ app.use('/', indexRoutes);
 app.use('/places', placeRoutes);
 app.use('/places/:id/comments', commentRoutes);
 
-// | |                   | | /  ___|
-// | |     ___   ___ __ _| | \ `--.  ___ _ ____   _____ _ __
-// | |    / _ \ / __/ _` | |  `--. \/ _ \ '__\ \ / / _ \ '__|
-// | |___| (_) | (_| (_| | | /\__/ /  __/ |   \ V /  __/ |
-// \_____/\___/ \___\__,_|_| \____/ \___|_|    \_/ \___|_|
+//   _____
+//  /  ___|
+//  \ `--.  ___ _ ____   _____ _ __
+//   `--. \/ _ \ '__\ \ / / _ \ '__|
+//  /\__/ /  __/ |   \ V /  __/ |
+//  \____/ \___|_|    \_/ \___|_|
 
-app.listen(3000, function() {
+app.listen(process.env.PORT, process.env.IP), function() {
     console.log('Server started on localhost:3000');
 });
