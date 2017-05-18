@@ -38,7 +38,7 @@ app.use(methodOverride('_method'));
 app.use(flash());
 app.use(express.static(__dirname + '/public'));
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/micro_airbnb');
+mongoose.connect('mongodb://testuser:qwerty@ds127531.mlab.com:27531/micro-airbnb');
 
 // ______                              _     _____              __ _
 // | ___ \                            | |   /  __ \            / _(_)
