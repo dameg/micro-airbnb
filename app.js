@@ -75,7 +75,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-
 app.use('/', indexRoutes);
 app.use('/places', placeRoutes);
 app.use('/places/:id/comments', commentRoutes);
