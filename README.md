@@ -1,2 +1,2 @@
 # μAirbnb
-Deployment : [Heroku](https://radiant-stream-45020.herokuapp.com) + mLab
+My first project created using Node.js with Express.
